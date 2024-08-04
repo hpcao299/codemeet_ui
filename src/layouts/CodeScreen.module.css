@@ -1,0 +1,157 @@
+.container {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.navbar {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.navtab {
+    padding: 10px 34px 10px 12px;
+    display: flex;
+    align-items: center;
+    min-width: 130px;
+    position: relative;
+    cursor: pointer;
+}
+
+.navtab.active {
+    background-color: #eee;
+}
+
+.navtab.active::after {
+    display: none;
+}
+
+.navtab::after {
+    content: '';
+    height: 50%;
+    width: 2px;
+    background-color: #ddd;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.navtab span {
+    margin-left: 12px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 6px;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 2px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.closeBtn:hover,
+.addBtn:hover {
+    background: #ddd;
+}
+
+.addBtn {
+    border: none;
+    outline: none;
+    background: none;
+    margin: auto 0 auto 8px;
+    height: max-content;
+    padding: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.code {
+    overflow: scroll;
+    height: 100%;
+    display: flex;
+    padding-top: 8px;
+}
+
+.lineCount {
+    width: 48px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #1a76d2;
+    padding-top: 8px;
+    border-right: 1px solid #ddd;
+    user-select: none;
+}
+
+.lineCount span {
+    padding: 4px 0;
+}
+
+.outputOpenBtn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 4px 20px 4px 14px;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid #ccc;
+    border-radius: 0px 24px 0px 0px;
+    font-family: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+.output {
+    height: 200px;
+    max-height: 550px;
+    border-top: 1px solid #ccc;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #fafafa;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 34px 20px 20px;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    z-index: 100;
+}
+
+.closeOutputBtn {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+.outputResizer {
+    position: absolute;
+    bottom: calc(100% - 5px);
+    left: 0;
+    right: 0;
+    height: 10px;
+    transition: all 0.2s ease 0.3s;
+    z-index: 10;
+}
+
+.outputResizer:hover {
+    background-color: #eee;
+    cursor: ns-resize;
+}
+
+.runCode {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 10;
+}
