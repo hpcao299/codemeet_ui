@@ -7,7 +7,12 @@ import dynamic from 'next/dynamic';
 import { CircularProgress } from '@mui/material';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), {
-    loading: () => <CircularProgress />,
+    loading: () => (
+        <div class="flex-center" style={{ width: '100%' }}>
+            Loading...
+        </div>
+    ),
+    ssr: false,
 });
 
 const CodeScreen = () => {
