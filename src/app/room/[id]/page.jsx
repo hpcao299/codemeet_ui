@@ -4,6 +4,9 @@ import theme from '@/config/theme';
 import CodeScreen from '@/layouts/CodeScreen';
 import RoomNavbar from '@/layouts/RoomNavbar';
 import { Container, ThemeProvider } from '@mui/material';
+import dynamic from 'next/dynamic';
+
+const RoomDetails = dynamic(() => import('@/layouts/RoomDetails'));
 
 const RoomMeet = () => {
     return (
@@ -16,6 +19,7 @@ const RoomMeet = () => {
                     <CodeScreen />
                 </Container>
                 <RoomNavbar />
+                <RoomDetails />
             </div>
         </ThemeProvider>
     );

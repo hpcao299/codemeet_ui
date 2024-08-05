@@ -1,4 +1,6 @@
 import ActionButton from '@/components/ActionButton';
+import tabs from '@/constants/tabs';
+import { useLayoutStore } from '@/stores';
 import {
     BackHandOutlined,
     CallEnd,
@@ -10,6 +12,8 @@ import {
 import { AppBar, Badge, Container, IconButton, Typography } from '@mui/material';
 
 const RoomNavbar = () => {
+    const setOpenRoomDetails = useLayoutStore(state => state.setOpenRoomDetails);
+
     return (
         <AppBar position="fixed" sx={{ top: 'unset', bottom: 0 }} color="transparent">
             <Container
@@ -54,12 +58,22 @@ const RoomNavbar = () => {
                     </ActionButton>
                 </Container>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <IconButton size="medium" sx={{ padding: '10px' }} aria-label="show-members">
+                    <IconButton
+                        size="medium"
+                        sx={{ padding: '10px' }}
+                        onClick={() => setOpenRoomDetails(true, tabs.ROOM_MEMBERS)}
+                        aria-label="show-members"
+                    >
                         <Badge badgeContent={4} color="primary">
                             <PeopleAlt sx={{ fontSize: '26px' }} />
                         </Badge>
                     </IconButton>
-                    <IconButton size="medium" sx={{ padding: '10px' }} aria-label="show-chat">
+                    <IconButton
+                        size="medium"
+                        sx={{ padding: '10px' }}
+                        onClick={() => setOpenRoomDetails(true, tabs.ROOM_CHAT)}
+                        aria-label="show-chat"
+                    >
                         <MessageOutlined sx={{ fontSize: '26px' }} />
                     </IconButton>
                     <Typography
