@@ -1,9 +1,14 @@
-import Editor from '@monaco-editor/react';
 import { Add, Close } from '@mui/icons-material';
 import Image from 'next/image';
 import javascript from '~/public/javascript.svg';
 import CodeOutput from './CodeOutput';
 import styles from './CodeScreen.module.css';
+import dynamic from 'next/dynamic';
+import { CircularProgress } from '@mui/material';
+
+const Editor = dynamic(() => import('@monaco-editor/react'), {
+    loading: () => <CircularProgress />,
+});
 
 const CodeScreen = () => {
     const handleEditorChange = value => {
