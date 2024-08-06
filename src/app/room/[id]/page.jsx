@@ -8,7 +8,8 @@ import { Box, Container, ThemeProvider, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-const RoomDetails = dynamic(() => import('@/layouts/RoomDetails'));
+const RoomDetails = dynamic(() => import('@/layouts/RoomDetails'), { ssr: false });
+const RoomSettings = dynamic(() => import('@/layouts/RoomSettings'), { ssr: false });
 
 const RoomMeet = () => {
     return (
@@ -39,6 +40,7 @@ const RoomMeet = () => {
                 </Container>
                 <RoomNavbar />
                 <RoomDetails />
+                <RoomSettings />
             </div>
         </ThemeProvider>
     );

@@ -3,6 +3,7 @@ import { create } from 'zustand';
 const useLayoutStore = create(set => ({
     roomDetailsTabValue: 0,
     openRoomDetails: false,
+    openSettingsModal: false,
 
     setOpenRoomDetails: (bool, tabIndex) => {
         set(state => ({
@@ -12,6 +13,9 @@ const useLayoutStore = create(set => ({
     },
     setRoomDetailsTab(value) {
         set(() => ({ roomDetailsTabValue: value }));
+    },
+    setOpenSettingsModal(bool) {
+        set(() => ({ openSettingsModal: bool }));
     },
 }));
 

@@ -12,7 +12,10 @@ import {
 import { AppBar, Badge, Container, IconButton, Typography } from '@mui/material';
 
 const RoomNavbar = () => {
-    const setOpenRoomDetails = useLayoutStore(state => state.setOpenRoomDetails);
+    const [setOpenRoomDetails, setOpenSettingsModal] = useLayoutStore(state => [
+        state.setOpenRoomDetails,
+        state.setOpenSettingsModal,
+    ]);
 
     return (
         <AppBar position="fixed" sx={{ top: 'unset', bottom: 0 }} color="transparent">
@@ -38,7 +41,11 @@ const RoomNavbar = () => {
                     <ActionButton size="medium" aria-label="raise-hand">
                         <BackHandOutlined sx={{ fontSize: '26px' }} />
                     </ActionButton>
-                    <ActionButton size="medium" aria-label="settings">
+                    <ActionButton
+                        size="medium"
+                        aria-label="settings"
+                        onClick={() => setOpenSettingsModal(true)}
+                    >
                         <MoreVert sx={{ fontSize: '26px' }} />
                     </ActionButton>
                     <ActionButton
