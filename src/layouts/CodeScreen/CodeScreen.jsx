@@ -4,11 +4,10 @@ import javascript from '~/public/javascript.svg';
 import CodeOutput from './CodeOutput';
 import styles from './CodeScreen.module.css';
 import dynamic from 'next/dynamic';
-import { CircularProgress } from '@mui/material';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), {
     loading: () => (
-        <div class="flex-center" style={{ width: '100%' }}>
+        <div className="flex-center" style={{ width: '100%' }}>
             Loading...
         </div>
     ),

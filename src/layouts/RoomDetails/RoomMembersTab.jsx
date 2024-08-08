@@ -28,8 +28,8 @@ const RoomMembersTab = () => {
                 />
             </FormControl>
             <div>
-                {[1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(() => (
-                    <Person />
+                {[1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, index) => (
+                    <Person key={index} />
                 ))}
             </div>
         </Box>
