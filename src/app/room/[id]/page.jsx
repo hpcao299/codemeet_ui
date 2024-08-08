@@ -1,11 +1,10 @@
 'use client';
 
 import SocketProvider from '@/app/SocketContext';
-import theme from '@/config/theme';
 import CodeScreen from '@/layouts/CodeScreen';
 import RoomNavbar from '@/layouts/RoomNavbar';
 import { MicOff } from '@mui/icons-material';
-import { Box, Container, ThemeProvider, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
@@ -14,38 +13,36 @@ const RoomSettings = dynamic(() => import('@/layouts/RoomSettings'), { ssr: fals
 
 const RoomMeet = () => {
     return (
-        <ThemeProvider theme={theme}>
-            <SocketProvider>
-                <div style={{ height: '100vh' }}>
-                    <Container
-                        maxWidth={false}
-                        sx={{ height: 'calc(100% - 82px)', p: '24px', display: 'flex' }}
+        <SocketProvider>
+            <div style={{ height: '100vh' }}>
+                <Container
+                    maxWidth={false}
+                    sx={{ height: 'calc(100% - 82px)', p: '24px', display: 'flex' }}
+                >
+                    <CodeScreen />
+                    <Box
+                        sx={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            // gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            paddingLeft: '16px',
+                            flex: 1,
+                            gap: '16px',
+                            overflowY: 'scroll',
+                        }}
                     >
-                        <CodeScreen />
-                        <Box
-                            sx={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(3, 1fr)',
-                                // gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                paddingLeft: '16px',
-                                flex: 1,
-                                gap: '16px',
-                                overflowY: 'scroll',
-                            }}
-                        >
-                            {[1, 1, 1, 1].map((_, index) => (
-                                <PersonBox key={index} />
-                            ))}
-                        </Box>
-                    </Container>
-                    <RoomNavbar />
-                    <RoomDetails />
-                    <RoomSettings />
-                </div>
-            </SocketProvider>
-        </ThemeProvider>
+                        {[1, 1, 1, 1].map((_, index) => (
+                            <PersonBox key={index} />
+                        ))}
+                    </Box>
+                </Container>
+                <RoomNavbar />
+                <RoomDetails />
+                <RoomSettings />
+            </div>
+        </SocketProvider>
     );
 };
 
