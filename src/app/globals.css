@@ -7,3 +7,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* Clerk Styles */
+.cl-formButtonPrimary.cl-button {
+    background-color: #1976d2;
+}
+
+.cl-footerActionLink,
+.cl-footerActionLink:hover {
+    color: #1976d2;
+}
