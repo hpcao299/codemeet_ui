@@ -51,6 +51,7 @@ const LoginPage = () => {
                     id="email"
                     label=""
                     variant="outlined"
+                    name="email"
                     placeholder="E.g: example@gmail.com"
                     inputProps={{ style: { padding: '14px' } }}
                     sx={{ mt: 1, mb: 2 }}
@@ -63,6 +64,7 @@ const LoginPage = () => {
                     id="password"
                     label=""
                     variant="outlined"
+                    name="password"
                     placeholder="Enter your password"
                     inputProps={{ style: { padding: '14px' } }}
                     sx={{ mt: 1, mb: 2 }}
