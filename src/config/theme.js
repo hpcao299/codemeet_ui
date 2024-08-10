@@ -25,6 +25,16 @@ const theme = createTheme({
             },
         },
     },
+    palette: {
+        primary: {
+            main: '#1976d2',
+            light: '#3787d6',
+        },
+        secondary: {
+            main: '#9c27b0',
+            light: '#b055c0',
+        },
+    },
 });
 
 export default theme;
