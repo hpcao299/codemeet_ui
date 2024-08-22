@@ -22,18 +22,17 @@ const RoomMeet = () => {
                     <CodeScreen />
                     <Box
                         sx={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
-                            // gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                            display: 'flex',
+                            flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            paddingLeft: '16px',
+                            paddingLeft: '30px',
                             flex: 1,
-                            gap: '16px',
+                            gap: '20px',
                             overflowY: 'scroll',
                         }}
                     >
-                        {[1, 1, 1, 1].map((_, index) => (
+                        {[1, 1].map((_, index) => (
                             <PersonBox key={index} />
                         ))}
                     </Box>
