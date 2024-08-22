@@ -1,6 +1,7 @@
-import { Add, CalendarToday, PersonAddAlt1, Settings } from '@mui/icons-material';
-import { Box, Button, Container, Grid, IconButton, Typography } from '@mui/material';
+import { Settings } from '@mui/icons-material';
+import { Box, Button, Container, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
+import DashboardActions from './DashboardActions';
 
 const DashboardPage = () => {
     return (
@@ -88,131 +89,7 @@ const DashboardPage = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Grid container sx={{ mt: 3 }} spacing={3}>
-                    <Grid item md={4}>
-                        <Box
-                            sx={{
-                                backgroundColor: 'primary.main',
-                                borderRadius: '12px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'flex-end',
-                                height: '200px',
-                                p: 2,
-                                color: 'white',
-                                position: 'relative',
-                                cursor: 'pointer',
-                                transition: 'all .2s ease',
-                                '&:hover': {
-                                    backgroundColor: 'primary.light',
-                                },
-                            }}
-                        >
-                            <Typography variant="h6" component="div">
-                                Create Meeting
-                            </Typography>
-                            <Typography variant="body1" component="div">
-                                Start an instant meeting
-                            </Typography>
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    top: '16px',
-                                    left: '12px',
-                                    width: '40px',
-                                    height: '40px',
-                                    backgroundColor: 'rgba(255,255,255,0.5)',
-                                    borderRadius: '8px',
-                                }}
-                                className="flex-center"
-                            >
-                                <Add fontSize="large" />
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item md={4}>
-                        <Box
-                            sx={{
-                                position: 'relative',
-                                backgroundColor: 'secondary.main',
-                                borderRadius: '12px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'flex-end',
-                                height: '200px',
-                                p: 2,
-                                color: 'white',
-                                transition: 'all .2s ease',
-                                cursor: 'pointer',
-                                '&:hover': {
-                                    backgroundColor: 'secondary.light',
-                                },
-                            }}
-                        >
-                            <Typography variant="h6" component="div">
-                                Schedule Meeting
-                            </Typography>
-                            <Typography variant="body1" component="div">
-                                Plan your meeting
-                            </Typography>
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    top: '16px',
-                                    left: '12px',
-                                    width: '40px',
-                                    height: '40px',
-                                    backgroundColor: 'rgba(255,255,255,0.5)',
-                                    borderRadius: '8px',
-                                }}
-                                className="flex-center"
-                            >
-                                <CalendarToday sx={{ fontSize: '25px' }} />
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item md={4}>
-                        <Box
-                            sx={{
-                                position: 'relative',
-                                backgroundColor: '#eaa00c',
-                                borderRadius: '12px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'flex-end',
-                                height: '200px',
-                                p: 2,
-                                color: 'white',
-                                transition: 'all .2s ease',
-                                cursor: 'pointer',
-                                '&:hover': {
-                                    backgroundColor: '#e8b54f',
-                                },
-                            }}
-                        >
-                            <Typography variant="h6" component="div">
-                                Join Meeting
-                            </Typography>
-                            <Typography variant="body1" component="div">
-                                Start an instant meeting
-                            </Typography>
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    top: '16px',
-                                    left: '12px',
-                                    width: '40px',
-                                    height: '40px',
-                                    backgroundColor: 'rgba(255,255,255,0.5)',
-                                    borderRadius: '8px',
-                                }}
-                                className="flex-center"
-                            >
-                                <PersonAddAlt1 sx={{ fontSize: '28px' }} />
-                            </Box>
-                        </Box>
-                    </Grid>
-                </Grid>
+                <DashboardActions />
             </Container>
         </>
     );
