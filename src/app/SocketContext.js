@@ -3,12 +3,15 @@ import { useRoomStore } from '@/stores';
 import { Box, CircularProgress } from '@mui/material';
 import { createContext, useContext, useEffect, useState } from 'react';
 import io from 'socket.io-client';
+import { useSnackbar } from './SnakebarContext';
+import { PersonAddAlt1 } from '@mui/icons-material';
 
 const SocketContext = createContext();
 
 export const useSocket = () => useContext(SocketContext);
 
 const SocketProvider = ({ children }) => {
+    const addSnackbar = useSnackbar();
     const roomId = useRoomStore(state => state.roomId);
     const [socket, setSocket] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -21,6 +24,9 @@ const SocketProvider = ({ children }) => {
 
         newSocket.on(socketEvents.ROOM_CREATED_SUCCESSFULLY, () => {
             setIsLoading(false);
+            setTimeout(() => {
+                addSnackbar('Share link to other people', 'info', PersonAddAlt1);
+            }, 1200);
         });
 
         return () => newSocket.disconnect();

@@ -1,5 +1,6 @@
 'use client';
 
+import SnackbarProvider from '@/app/SnakebarContext';
 import SocketProvider from '@/app/SocketContext';
 import CodeScreen from '@/layouts/CodeScreen';
 import RoomNavbar from '@/layouts/RoomNavbar';
@@ -13,35 +14,37 @@ const RoomSettings = dynamic(() => import('@/layouts/RoomSettings'), { ssr: fals
 
 const RoomMeet = () => {
     return (
-        <SocketProvider>
-            <div style={{ height: '100vh' }}>
-                <Container
-                    maxWidth={false}
-                    sx={{ height: 'calc(100% - 82px)', p: '24px', display: 'flex' }}
-                >
-                    <CodeScreen />
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            paddingLeft: '30px',
-                            flex: 1,
-                            gap: '20px',
-                            overflowY: 'scroll',
-                        }}
+        <SnackbarProvider>
+            <SocketProvider>
+                <div style={{ height: '100vh' }}>
+                    <Container
+                        maxWidth={false}
+                        sx={{ height: 'calc(100% - 82px)', p: '24px', display: 'flex' }}
                     >
-                        {[1, 1].map((_, index) => (
-                            <PersonBox key={index} />
-                        ))}
-                    </Box>
-                </Container>
-                <RoomNavbar />
-                <RoomDetails />
-                <RoomSettings />
-            </div>
-        </SocketProvider>
+                        <CodeScreen />
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                paddingLeft: '30px',
+                                flex: 1,
+                                gap: '20px',
+                                overflowY: 'scroll',
+                            }}
+                        >
+                            {[1, 1].map((_, index) => (
+                                <PersonBox key={index} />
+                            ))}
+                        </Box>
+                    </Container>
+                    <RoomNavbar />
+                    <RoomDetails />
+                    <RoomSettings />
+                </div>
+            </SocketProvider>
+        </SnackbarProvider>
     );
 };
 
