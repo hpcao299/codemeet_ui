@@ -49,7 +49,7 @@ const DashboardActions = () => {
                     backgroundColor="#eaa00c"
                     backgroundColorHover="#e8b54f"
                     title="Join Meeting"
-                    desc="Start an instant meeting"
+                    desc="Attend your friend's meeting"
                     Icon={PersonAddAlt1}
                     fontSizeIcon="28px"
                 />

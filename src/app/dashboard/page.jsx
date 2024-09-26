@@ -1,7 +1,7 @@
-import { Settings } from '@mui/icons-material';
-import { Box, Button, Container, IconButton, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import DashboardActions from './DashboardActions';
+import DashboardHeaderActions from './DashboardHeaderActions';
 
 const DashboardPage = () => {
     return (
@@ -21,23 +21,11 @@ const DashboardPage = () => {
                     }}
                 >
                     <Typography variant="h6">CodeMeet</Typography>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <Image
-                            src="/example_avatar.png"
-                            alt="Example"
-                            width={34}
-                            height={34}
-                            style={{ borderRadius: '50%' }}
-                        />
-                        <IconButton>
-                            <Settings fontSize="medium" />
-                        </IconButton>
-                        <Button variant="outlined">Upgrade to Pro</Button>
-                    </Box>
+                    <DashboardHeaderActions />
                 </Container>
             </Box>
-            <Container>
-                <Box sx={{ mt: 3 }}>
+            <Container sx={{ mb: 3 }}>
+                <Box sx={{ mt: 1 }}>
                     <Box
                         sx={{
                             display: 'flex',
