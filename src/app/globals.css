@@ -32,7 +32,7 @@ body {
     height: 40px;
     --g: radial-gradient(
             farthest-side,
-            #0000 calc(95% - 3px),
+            #1976d2 calc(95% - 3px),
             #1976d2 calc(100% - 3px) 98%,
             #0000 101%
         )
