@@ -1,8 +1,7 @@
 import { currentUser } from '@clerk/nextjs/server';
-import { Settings } from '@mui/icons-material';
-import { Box, Button, IconButton } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
+import SettingsMenu from './SettingsMenu';
 
 const DashboardHeaderActions = async () => {
     const user = await currentUser();
@@ -12,15 +11,13 @@ const DashboardHeaderActions = async () => {
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Image
-                src="/example_avatar.png"
-                alt="Example"
+                src={user.imageUrl}
+                alt={user.firstName}
                 width={34}
                 height={34}
                 style={{ borderRadius: '50%' }}
             />
-            <IconButton>
-                <Settings fontSize="medium" />
-            </IconButton>
+            <SettingsMenu />
             <Button variant="outlined">Upgrade to Pro</Button>
         </Box>
     );

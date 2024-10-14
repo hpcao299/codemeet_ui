@@ -36,16 +36,11 @@ const RoomSettings = () => {
         width: '40vw',
         bgcolor: 'background.paper',
         p: 4,
-        borderRadius: '12px',
+        borderRadius: '8px',
     };
 
     return (
-        <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-        >
+        <Modal open={open} onClose={handleClose}>
             <Box sx={style}>
                 <Box
                     sx={{
@@ -55,9 +50,14 @@ const RoomSettings = () => {
                         mb: 2,
                     }}
                 >
-                    <Typography variant="h4" component="h4">
-                        Settings
-                    </Typography>
+                    <Box>
+                        <Typography variant="h4" component="h4" sx={{ mb: 0.4 }}>
+                            Settings
+                        </Typography>
+                        <Typography variant="body2" component="div">
+                            Configure the meeting room settings here.
+                        </Typography>
+                    </Box>
                     <IconButton onClick={handleClose}>
                         <Close />
                     </IconButton>
